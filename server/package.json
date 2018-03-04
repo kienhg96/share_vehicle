@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "server": "start.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "HoangKien",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.2",
+    "lodash": "^4.17.5",
+    "moment": "^2.20.1",
+    "mongoose": "^5.0.7",
+    "redis": "^2.8.0",
+    "ws": "^4.1.0"
+  }
+}
