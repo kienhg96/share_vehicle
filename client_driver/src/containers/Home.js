@@ -45,7 +45,6 @@ class Home extends Component {
 					>
 					</MapView>
 				</Container>
-				<KeepAwake />
 			</DrawerLayout>
 		);
 	}
