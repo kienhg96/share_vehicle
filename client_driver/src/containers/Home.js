@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container } from 'native-base';
 import { StyleSheet, View } from 'react-native';
-import MapView from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
 class Home extends Component {
 	render() {
@@ -16,6 +16,7 @@ class Home extends Component {
 						latitudeDelta: 0.015,
 						longitudeDelta: 0.0121,
 					}}
+					provider={ PROVIDER_GOOGLE }
 				>
 				</MapView>
 			</Container>

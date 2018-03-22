@@ -26,9 +26,9 @@ class ChooseLoginTypes extends Component {
 								<Text uppercase={false} style={style.underlineText}>{Localization.text("Đăng nhập bằng số điện thoại")}</Text>
 							</Button>
 							<Text style={style.orTextPadding}>{Localization.text("Or")}</Text>
-							<Button small block>
+							<Button block>
 								<Icon name='logo-facebook' />
-								<Text uppercase={false}>{Localization.text("Đăng nhập bằng tài khoản facebook")}</Text>
+								<Text uppercase={false}>{Localization.text("Đăng nhập bằng facebook")}</Text>
 							</Button>
 						</View>
 					</Row>
