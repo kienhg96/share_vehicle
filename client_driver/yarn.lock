@@ -1202,6 +1202,7 @@ babel-types@^6.18.0, babel-types@^6.19.0, babel-types@^6.24.1, babel-types@^6.26
     to-fast-properties "^1.0.3"
 
 "babylon7@npm:babylon@^7.0.0-beta", babylon@7.0.0-beta.40:
+  name babylon7
   version "7.0.0-beta.40"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-7.0.0-beta.40.tgz#91fc8cd56d5eb98b28e6fde41045f2957779940a"
 
@@ -3929,6 +3930,10 @@ react-native-drawer-layout@1.3.2:
   dependencies:
     react-native-dismiss-keyboard "1.0.0"
 
+react-native-drawer-layout@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-drawer-layout/-/react-native-drawer-layout-2.0.0.tgz#8ce1e4027bd3f3a09045afdb46080e18346be232"
+
 react-native-drawer@2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/react-native-drawer/-/react-native-drawer-2.5.0.tgz#022cba5c0516126a9fc9cce3185cb46c644b51c4"
@@ -3945,6 +3950,10 @@ react-native-easy-grid@0.1.17:
 react-native-iphone-x-helper@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.0.2.tgz#7dbca530930f7c1ce8633cc8fd13ba94102992e1"
+
+react-native-keep-awake@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-keep-awake/-/react-native-keep-awake-3.0.1.tgz#916652b039732a93e0b6b6077e8905fe7e74abea"
 
 react-native-keyboard-aware-scroll-view@0.4.2:
   version "0.4.2"
