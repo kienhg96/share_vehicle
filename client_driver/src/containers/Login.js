@@ -42,10 +42,11 @@ class Login extends Component {
 							<Label>{Localization.text("Nhập số điện thoại của bạn")}</Label>
 							<Input value={this.state.username}
 								onChangeText={text => this.setState({ username: text })}
+								keyboardType='numeric'
 							/>
 						</Item>
 						<Item floatingLabel>
-							<Label>{Localization.text("Nhập mật khẩu")}</Label>
+							<Label>{Localization.text("Nhập mật khẩu 2")}</Label>
 							<Input value={this.state.password}
 								onChangeText={text => this.setState({ password: text })}
 								secureTextEntry
@@ -54,7 +55,7 @@ class Login extends Component {
 					</Form>
 					<Grid>
 						<Col size={2} style={style.actionLeft}>
-							<Button light block onPress={this.handleBackPress}>
+							<Button transparent block onPress={this.handleBackPress}>
 								<Icon name="arrow-back" />
 							</Button>
 						</Col>
@@ -67,7 +68,7 @@ class Login extends Component {
 							</Button>
 						</Col>
 						<Col size={2} style={style.actionRight}>
-							<Button light block onPress={this.handleForwardPress}>
+							<Button transparent block onPress={this.handleForwardPress}>
 								<Icon name="arrow-forward" />
 							</Button>
 						</Col>

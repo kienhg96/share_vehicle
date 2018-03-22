@@ -26,7 +26,7 @@ class ChooseLoginTypes extends Component {
 								<Text uppercase={false} style={style.underlineText}>{Localization.text("Đăng nhập bằng số điện thoại")}</Text>
 							</Button>
 							<Text style={style.orTextPadding}>{Localization.text("Or")}</Text>
-							<Button block>
+							<Button>
 								<Icon name='logo-facebook' />
 								<Text uppercase={false}>{Localization.text("Đăng nhập bằng facebook")}</Text>
 							</Button>
@@ -56,7 +56,8 @@ const style = StyleSheet.create({
 	},
 
 	underlineText: {
-		textDecorationLine: 'underline'
+		textDecorationLine: 'underline',
+		fontSize: 16
 	}
 });
 
