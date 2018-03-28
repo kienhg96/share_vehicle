@@ -11,3 +11,9 @@ export const gotoHome = () => reset({
 		navigate({ routeName: 'Home' })
 	]
 });
+
+export const gotoTrips = () => navigate({ routeName: 'Trips' });
+export const gotoWallet = () => navigate({ routeName: 'Wallet' });
+export const gotoNotifications = () => navigate({ routeName: 'Notifications' });
+export const gotoSettings = () => navigate({ routeName: 'Settings' });
+export const gotoHelps = () => navigate({ routeName: 'Helps' });

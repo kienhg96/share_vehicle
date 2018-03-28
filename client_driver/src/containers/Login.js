@@ -35,7 +35,7 @@ class Login extends Component {
 			<Container>
 				<Content padder>
 					<View style={style.imageContainer}>
-						<Image source={res.logo_small} />
+						<Image source={res.logo} />
 					</View>
 					<Form style={style.form}>
 						<Item floatingLabel>
@@ -46,7 +46,7 @@ class Login extends Component {
 							/>
 						</Item>
 						<Item floatingLabel>
-							<Label>{Localization.text("Nhập mật khẩu 2")}</Label>
+							<Label>{Localization.text("Nhập mật khẩu")}</Label>
 							<Input value={this.state.password}
 								onChangeText={text => this.setState({ password: text })}
 								secureTextEntry

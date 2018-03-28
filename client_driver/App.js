@@ -8,19 +8,22 @@ import { connect } from 'react-redux';
 import {
 	createReduxBoundAddListener
 } from 'react-navigation-redux-helpers';
+import { Root } from "native-base";
 
 const addListener = createReduxBoundAddListener("root");
 
 class App extends React.Component {
 	render() {
 		return (
-			<Navigator 
-				navigation={addNavigationHelpers({
-					dispatch: this.props.dispatch,
-					state: this.props.nav,
-					addListener
-				})}
-			/>
+			<Root>
+				<Navigator 
+					navigation={addNavigationHelpers({
+						dispatch: this.props.dispatch,
+						state: this.props.nav,
+						addListener
+					})}
+				/>
+			</Root>
 		);
 	}
 }

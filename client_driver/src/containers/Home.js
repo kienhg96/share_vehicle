@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container } from 'native-base';
+import { Container, Button, Icon, Toast } from 'native-base';
 import { StyleSheet, View, ScrollView, Text } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { DrawerNavigator, DrawerItems } from 'react-navigation';
 import DrawerLayout from 'react-native-drawer-layout';
 import HomeDrawer from '../components/HomeDrawer';
 import KeepAwake from 'react-native-keep-awake';
+import {
+	gotoTrips,
+	gotoWallet,
+	gotoNotifications,
+	gotoHelps,
+	gotoSettings
+} from '../actions/navigate';
 
 class Home extends Component {
 	constructor(props) {
@@ -15,6 +22,8 @@ class Home extends Component {
 			lat: 37.78825,
 			lng: -122.4324
 		}
+		this.handleBtnMenuPress = this.handleBtnMenuPress.bind(this);
+		this.handleMenuPress = this.handleMenuPress.bind(this);
 	}
 
 	componentDidMount() {
@@ -24,12 +33,45 @@ class Home extends Component {
 		}));
 	}
 
+	handleBtnMenuPress() {
+		this.drawer.openDrawer();
+	}
+
+	handleMenuPress(cmd) {
+		// this.drawer.closeDrawer();
+		switch (cmd) {
+			case 'trips':
+				this.props.gotoTrips();
+				break;
+			case 'wallet':
+				this.props.gotoWallet();
+				break;
+			case 'notifications':
+				this.props.gotoNotifications();
+				break;
+			case 'helps':
+				this.props.gotoHelps();
+				break;
+			case 'settings':
+				this.props.gotoSettings();
+				break;
+			default:
+				Toast.show({
+					text: "Unhandled",
+					position: 'bottom',
+					buttonText: 'Okay'
+				});
+		}
+	}
+
 	render() {
 		return (
 			<DrawerLayout
-				drawerWidth={200}
+				drawerWidth={250}
 				drawerPosition={DrawerLayout.positions.Left}
-				renderNavigationView={HomeDrawer}
+				renderNavigationView={() => <HomeDrawer onMenuPress={this.handleMenuPress}/>}
+				drawerLockMode='locked-closed'
+				ref={drawer => this.drawer = drawer}
 			>
 				<Container>
 					<MapView
@@ -42,35 +84,36 @@ class Home extends Component {
 							longitudeDelta: 0.0121,
 						}}
 						provider={PROVIDER_GOOGLE}
-					>
-					</MapView>
+						rotateEnabled={false}
+					/>
 				</Container>
+				<View style={styles.menuIcon}>
+					<Button transparent block onPress={this.handleBtnMenuPress}>
+						<Icon name="md-menu" />
+					</Button>
+				</View>
+				<KeepAwake />
 			</DrawerLayout>
 		);
 	}
 }
 
 const styles = StyleSheet.create({
-	map: {
-		...StyleSheet.absoluteFillObject,
-	},
+	map: StyleSheet.absoluteFillObject,
+
+	menuIcon: {
+		backgroundColor: '#e0f7fa',
+		borderRadius: 10,
+		position: 'absolute',
+		top: 30,
+		left: 10
+	}
 });
 
-export default connect(state => ({}), {})(Home);
-// const HomeContainer = connect(state => ({}), {})(Home);
-
-// const Drawer = DrawerNavigator({
-// 	Home: {
-// 		screen: HomeContainer
-// 	}
-// }, {
-// 	drawerWidth: 200,
-// 	contentComponent: props => (
-// 		<ScrollView>
-// 			<DrawerItems {...props} />
-// 		</ScrollView>
-// 	),
-// 	initialRouteName: 'Home'
-// });
-
-// export default Drawer;
+export default connect(state => ({}), {
+	gotoTrips,
+	gotoWallet,
+	gotoNotifications,
+	gotoHelps,
+	gotoSettings
+})(Home);
